@@ -1,4 +1,4 @@
-FROM node:10.15.0
+FROM node:10.15.0-alpine
 
-RUN echo 'Asia/Shanghai' > /etc/timezone
-RUN dpkg-reconfigure -f noninteractive tzdata
+RUN apk add --no-cache tzdata
+ENV TZ Asia/Shanghai
